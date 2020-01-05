@@ -1,0 +1,57 @@
+{
+    "stock": [
+        {
+            "id": 1,
+            "amount": 3
+        },
+        {
+            "id": 2,
+            "amount": 5
+        },
+        {
+            "id": 3,
+            "amount": 2
+        },
+        {
+            "id": 4,
+            "amount": 1
+        },
+        {
+            "id": 5,
+            "amount": 5
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "title": "SSD Legal pra caramba",
+            "price": 320.9,
+            "image": "https://images-shoptime.b2w.io/produtos/01/00/item/126049/1/126049117SZ.jpg"
+        },
+        {
+            "id": 2,
+            "title": "SSD Sem graça",
+            "price": 220.9,
+            "image": "http://s2.glbimg.com/sKQ-ZM7w2KxKk0IrXPEN3V38FNI=/695x0/s.glbimg.com/po/tt2/f/original/2016/10/26/17.png"
+        },
+        {
+            "id": 3,
+            "title": "SSD Incrivel",
+            "price": 420.9,
+            "image": "https://lojamultilaser.vteximg.com.br/arquivos/ids/179556-1000-1000/ss100_01.jpg?v=636616774931730000"
+        },
+        {
+            "id": 4,
+            "title": "SSD God",
+            "price": 1020.9,
+            "image": "https://opiniaobomvaleapena.com.br/imagens/ssd-kingston-uv300-240gb.png"
+        },
+        {
+            "id": 5,
+            "title": "SSD para Ruizões",
+            "price": 120.9,
+            "image": "https://static3.tcdn.com.br/img/img_prod/374123/ssd_ns100_128gb_2_5_sata_iii_6gb_s_lns100_128rbna_lexar_29221_1_20190703143456.png"
+        }
+
+    ]
+}
