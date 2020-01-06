@@ -1,1 +1,1 @@
-Treinamentos de redux para implementação do projeto principal.
+Treinamentos de redux da rocketseat para implementação do projeto principal.
