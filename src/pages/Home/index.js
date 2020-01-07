@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux'
+import { bindActionCreators } from 'redux'
 import { MdAddShoppingCart } from 'react-icons/md';
 import { ProductList } from './styles';
 import api from '../../services/api';
@@ -25,31 +25,32 @@ class Home extends Component {
     this.setState({ products: data });
   }
 
-  handleAddProduct = products =>{
-    const {addToCart} = this.props
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props
 
-    addToCart(products)
+    addToCartRequest(id)
   }
 
 
   render() {
     const { products } = this.state;
-
+    const { amount } = this.props;
     return (
       <ProductList>
         {products.map(products => (
-        
-          <li key ={products.id}>
-            
+
+          <li key={products.id}>
+
             <img src={products.image} alt={products.title} />
             <div>
-            <strong>{products.title}</strong>
-            <span>{products.priceFormated}</span>
+              <strong>{products.title}</strong>
+              <span>{products.priceFormated}</span>
             </div>
-            <button type="button" onClick={() => this.handleAddProduct(products)}>
+            <button type="button" onClick={() => this.handleAddProduct(products.id)}>
               <div>
-                <MdAddShoppingCart size={16} color="#fff" /> 3
-        </div>
+                <MdAddShoppingCart size={16} color="#fff" />
+                {amount[products.id]||0}
+              </div>
               <span>ADICIONAR CARRINHO</span>
             </button>
           </li>
@@ -58,6 +59,13 @@ class Home extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  amount: state.cart.reduce((amount,product)=>{
+    amount[product.id]= product.amount
+    return amount
+  },{})
+});
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(cartActions, dispatch);
-export default connect(null,mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
